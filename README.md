@@ -20,7 +20,7 @@ A utility script to safely reset bash profile configuration files to Debian 12 d
 ## Installation
 
 1. Download the script:
-```bash
+```bas4h
 curl -O https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh
 ```
 
