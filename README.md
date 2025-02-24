@@ -26,7 +26,7 @@ wget -v https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-
 
 2. Make the script executable:
 ```bash
-chmod +x reset_bash_profile.sh
+chmod +x reset-bash-profile.sh
 ```
 
 ## Usage
