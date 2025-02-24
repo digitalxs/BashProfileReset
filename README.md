@@ -111,7 +111,7 @@ Luis Miguel P. Freitas - 2025
 
 ## Version History
 
-- 1.0.1 (2024-02-23)
+- 1.0.2 (2024-02-23)
   - Initial release
   - Basic functionality for resetting bash profile
   - Automatic backups with timestamps
