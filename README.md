@@ -21,7 +21,7 @@ A utility script to safely reset bash profile configuration files to Debian 12 d
 
 1. Download the script:
 ```bash
-curl -O https://raw.githubusercontent.com/digitalxs/BashProfileReset/main/reset_bash_profile.sh
+curl -O [[https://raw.githubusercontent.com/digitalxs/BashProfileReset/main/reset_bash_profile.sh](https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh](https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh)](https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh)
 ```
 
 2. Make the script executable:
@@ -44,7 +44,7 @@ sudo ./reset_bash_profile.sh johndoe
 
 ## What the Script Does
 
-1. Creates a timestamped backup directory in the user's home folder
+1. Creates a timestamped backup directory in the userhttps://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh's home folder
 2. Backs up existing `.bashrc`, `.profile`, and `.bash_logout` files
 3. Copies default configuration files from `/etc/skel/`
 4. Sets appropriate ownership and permissions
