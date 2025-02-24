@@ -16,6 +16,7 @@ A utility script to safely reset bash profile configuration files to Debian 12 d
 - Debian 12 Linux distribution
 - Root access (sudo privileges)
 - Bash shell
+- wget
 
 ## Installation
 
