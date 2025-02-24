@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# reset_bash_profile.sh - Script to reset bash profile to Debian 12 defaults
-# Usage: sudo ./reset_bash_profile.sh [username]
+# reset-bash-profile.sh - Script to reset bash profile to Debian 12 defaults
+# Usage: sudo ./reset-bash-profile.sh [username]
 # Author: Luis Miguel P. Freitas
 # Contact me at: luis@digitalxs.ca or https:digitalxs.ca
 # YOU ARE ABSOLUTELY FREE TO USE THIS SCRIPT AS YOU WANT. IT'S YOUR RESPONSABILITY ALONE!
