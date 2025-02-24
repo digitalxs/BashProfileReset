@@ -45,7 +45,7 @@ sudo ./reset-bash-profile.sh johndoe
 
 ## What the Script Does
 
-1. Creates a timestamped backup directory in the userhttps://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh's home folder
+1. Creates a timestamped backup directory in the user home folder
 2. Backs up existing `.bashrc`, `.profile`, and `.bash_logout` files
 3. Copies default configuration files from `/etc/skel/`
 4. Sets appropriate ownership and permissions
