@@ -21,7 +21,7 @@ A utility script to safely reset bash profile configuration files to Debian 12 d
 
 1. Download the script:
 ```bas4h
-curl -O https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh
+wget -v https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh
 ```
 
 2. Make the script executable:
@@ -34,12 +34,12 @@ chmod +x reset_bash_profile.sh
 Run the script with sudo, providing the target username:
 
 ```bash
-sudo ./reset_bash_profile.sh username
+sudo ./reset-bash-profile.sh username
 ```
 
 Example:
 ```bash
-sudo ./reset_bash_profile.sh johndoe
+sudo ./reset-bash-profile.sh johndoe
 ```
 
 ## What the Script Does
