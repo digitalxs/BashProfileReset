@@ -1,10 +1,10 @@
 #!/bin/bash
-
 # reset-bash-profile.sh - Script to reset bash profile to Debian 12 defaults
 # Usage: sudo ./reset-bash-profile.sh [username]
 # Author: Luis Miguel P. Freitas
 # Contact me at: luis@digitalxs.ca or https://digitalxs.ca
 # YOU ARE ABSOLUTELY FREE TO USE THIS SCRIPT AS YOU WANT. IT'S YOUR RESPONSABILITY ALONE!
+
 # Function to check if script is run as root
 check_root() {
     if [ "$EUID" -ne 0 ]; then
@@ -36,27 +36,34 @@ main() {
         echo "Example: $0 johndoe"
         exit 1
     fi
-
+    
     # Store username
     local username=$1
-
+    
     # Check root privileges
     check_root
-
+    
     # Validate username
     validate_user "$username"
-
+    
     # Get user's home directory
     local home_dir=$(get_home_dir "$username")
-
+    
     echo "Resetting bash profile for user: $username"
     echo "Home directory: $home_dir"
-
+    
     # Create backup directory
     local backup_dir="$home_dir/bash_backup_$(date +%Y%m%d_%H%M%S)"
     echo "Creating backup directory: $backup_dir"
     mkdir -p "$backup_dir"
-
+    
+    # Verify that default files exist in /etc/skel/
+    for file in .bashrc .profile .bash_logout; do
+        if [ ! -f "/etc/skel/$file" ]; then
+            echo "Warning: Default file /etc/skel/$file not found"
+        fi
+    done
+    
     # Backup existing files
     echo "Backing up existing files..."
     for file in .bashrc .profile .bash_logout; do
@@ -64,25 +71,45 @@ main() {
             cp "$home_dir/$file" "$backup_dir/" 2>/dev/null || echo "Warning: Could not backup $file"
         fi
     done
-
+    
+    # Backup additional bash-related files
+    additional_files=".bash_aliases .bash_history .bashrc_help .config/starship.toml"
+    for file in $additional_files; do
+        if [ -f "$home_dir/$file" ]; then
+            echo "Found additional file: $file (backing up)"
+            # Create directory structure if needed
+            mkdir -p "$backup_dir/$(dirname "$file")" 2>/dev/null
+            cp "$home_dir/$file" "$backup_dir/$file" 2>/dev/null || echo "Warning: Could not backup $file"
+        fi
+    done
+    
+    # Check for and remove symlinks
+    for file in .bashrc .profile .bash_logout .bashrc_help; do
+        if [ -L "$home_dir/$file" ]; then
+            echo "Removing symlink: $file"
+            rm "$home_dir/$file"
+        fi
+    done
+    
     # Copy default files
     echo "Copying default files from /etc/skel/..."
     for file in .bashrc .profile .bash_logout; do
         cp "/etc/skel/$file" "$home_dir/" 2>/dev/null || echo "Warning: Could not copy $file"
     done
-
+    
     # Set permissions
     echo "Setting correct permissions..."
     for file in .bashrc .profile .bash_logout; do
         chown "$username:$username" "$home_dir/$file"
         chmod 644 "$home_dir/$file"
     done
-
+    
     echo "
 Bash profile reset completed successfully!
 - Backup files are stored in: $backup_dir
 - Default files have been restored
 - Permissions have been set
+- Symlinks have been removed
 
 To apply changes, the user should either:
 1. Log out and log back in
