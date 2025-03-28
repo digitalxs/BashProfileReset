@@ -44,11 +44,6 @@ chmod +x reset-bash-profile.sh
 sudo ./reset-bash-profile.sh username
 ```
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/terminal-demo.png" alt="Terminal Demo" width="80%">
-  <p><i>The script in action, showing a successful reset operation</i></p>
-</div>
-
 ---
 
 ## 🎯 Features
