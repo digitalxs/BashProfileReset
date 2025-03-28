@@ -1,119 +1,300 @@
-# Bash Profile Reset Script
+<div align="center">
 
-A utility script to safely reset bash profile configuration files to Debian 12 defaults while creating automatic backups.
+# <img src="https://www.debian.org/logos/openlogo-nd.svg" alt="Debian Logo" width="50"> Bash Profile Reset Script
 
-## Features
+<p>
+  <img src="https://img.shields.io/badge/Version-1.1.0-blue.svg" alt="Version 1.1.0">
+  <img src="https://img.shields.io/badge/OS-Debian%2012-red.svg" alt="OS Debian 12">
+  <img src="https://img.shields.io/badge/License-GPL%20v3-green.svg" alt="License GPL v3">
+  <img src="https://img.shields.io/badge/Shell-Bash-yellow.svg" alt="Shell Bash">
+</p>
 
-- Automatically backs up existing bash configuration files
-- Restores default Debian bash profile settings
-- Sets correct file permissions
-- Creates timestamped backups
-- Provides clear feedback and error handling
-- Validates user input and permissions
+<p>A robust utility script to safely reset bash profile configuration files to Debian 12 defaults<br>with automatic backups, restoration capabilities, and advanced user controls.</p>
 
-## Prerequisites
+<p>
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#features">Features</a> •
+  <a href="#screenshots">Screenshots</a> •
+  <a href="#documentation">Documentation</a> •
+  <a href="#license">License</a> •
+  <a href="#support">Support</a>
+</p>
 
-- Debian 12 Linux distribution
-- Root access (sudo privileges)
-- Bash shell
-- wget
+<p>
+  <a href="https://www.buymeacoffee.com/digitalxs" target="_blank">
+    <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
+  </a>
+</p>
 
-## Installation
+</div>
 
-1. Download the script:
-```bas4h
-wget -v https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh
-```
+---
 
-2. Make the script executable:
+## 🚀 Quick Start
+
 ```bash
+# Download the script
+wget -v https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh
+
+# Make it executable
 chmod +x reset-bash-profile.sh
+
+# Run it (replace 'username' with the target user)
+sudo ./reset-bash-profile.sh username
 ```
 
-## Usage
+<div align="center">
+  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/terminal-demo.png" alt="Terminal Demo" width="80%">
+  <p><i>The script in action, showing a successful reset operation</i></p>
+</div>
 
-Run the script with sudo, providing the target username:
+---
+
+## 🎯 Features
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/features-overview.png" alt="Features Overview" width="80%">
+</div>
+
+- **📂 Comprehensive Backup System**
+  - Automatic timestamped backups of all bash configuration files
+  - Customizable backup locations
+  - Backup metadata tracking
+  - Preservation of file attributes and permissions
+
+- **🎛️ Advanced User Controls**
+  - Dry-run mode to preview changes without applying them
+  - Force mode to skip confirmation prompts
+  - Verbose mode for detailed operation logging
+  - Custom backup location specification
+
+- **🔄 Restoration Capabilities**
+  - List all available backups for a user
+  - Restore from any previous backup
+  - Safe restoration process with confirmations
+
+- **🛡️ Security Enhancements**
+  - Proper permission settings on all files
+  - Secure backup directories (700 permissions)
+  - Detailed operation logging
+
+- **💻 User Experience**
+  - Color-coded output for better readability
+  - Clear operation summaries
+  - Helpful next-step guidance
+  - Command-line help system
+
+---
+
+## 💾 Installation
+
+1. **Download the script:**
+   ```bash
+   wget -v https://github.com/digitalxs/BashProfileReset/raw/refs/heads/main/reset-bash-profile.sh
+   ```
+
+2. **Make the script executable:**
+   ```bash
+   chmod +x reset-bash-profile.sh
+   ```
+
+3. **Verify installation:**
+   ```bash
+   ./reset-bash-profile.sh --version
+   ```
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/installation.png" alt="Installation" width="80%">
+  <p><i>Installing the script on Debian 12</i></p>
+</div>
+
+---
+
+## 📚 Usage
+
+### Basic Usage
+
+Reset a user's bash profile to defaults on Debian 12:
 
 ```bash
 sudo ./reset-bash-profile.sh username
 ```
 
-Example:
+### Advanced Usage Examples
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/advanced-usage.png" alt="Advanced Usage" width="80%">
+  <p><i>Examples of advanced script options in action</i></p>
+</div>
+
+#### See All Available Options
+
 ```bash
-sudo ./reset-bash-profile.sh johndoe
+sudo ./reset-bash-profile.sh --help
 ```
 
-## What the Script Does
+#### Perform a Dry Run (Preview Without Changes)
 
-1. Creates a timestamped backup directory in the user home folder
-2. Backs up existing `.bashrc`, `.profile`, and `.bash_logout` files
-3. Copies default configuration files from `/etc/skel/`
-4. Sets appropriate ownership and permissions
-5. Provides instructions for applying changes
-
-## File Locations
-
-- Backup files: `~/bash_backup_YYYYMMDD_HHMMSS/`
-- Default configuration source: `/etc/skel/`
-- Target files:
-  - `~/.bashrc`
-  - `~/.profile`
-  - `~/.bash_logout`
-
-## After Running the Script
-
-The user should either:
-1. Log out and log back in
-OR
-2. Run the following command to apply changes immediately:
 ```bash
-source ~/.bashrc
+sudo ./reset-bash-profile.sh username --dry-run
 ```
 
-## Restoring Custom Modifications
+#### Use Force Mode (Skip Confirmations)
 
-If you had custom modifications in your bash profile:
-1. Check the backup directory (`~/bash_backup_YYYYMMDD_HHMMSS/`)
-2. Compare the backed-up files with the new ones
-3. Manually restore any desired customizations
+```bash
+sudo ./reset-bash-profile.sh username --force
+```
 
-## Troubleshooting
+#### Specify a Custom Backup Directory
+
+```bash
+sudo ./reset-bash-profile.sh username --backup-dir /var/backups/bash
+```
+
+#### List All Available Backups
+
+```bash
+sudo ./reset-bash-profile.sh username --list-backups
+```
+
+#### Restore From a Backup
+
+```bash
+sudo ./reset-bash-profile.sh username --restore /home/username/bash_backup_20240327_123456
+```
+
+#### Combine Multiple Options
+
+```bash
+sudo ./reset-bash-profile.sh username --verbose --backup-dir /backups --force
+```
+
+---
+
+## 📋 What the Script Does
+
+   - Checks for root privileges
+   - Validates the username exists
+   - Verifies the home directory is accessible
+   - Creates a timestamped backup directory
+   - Backs up all bash-related configuration files
+   - Creates metadata about the backup
+   - Sets secure permissions on the backup
+   - Removes existing bash configuration files
+   - Copies default files from `/etc/skel/`
+   - Sets appropriate ownership and permissions
+   - Provides a summary of operations performed
+   - Shows the backup location
+   - Gives instructions for applying changes
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/workflow.png" alt="Script Workflow" width="80%">
+  <p><i>Visual representation of the script's workflow</i></p>
+</div>
+
+---
+
+## 📁 Files Affected
+
+### Primary Configuration Files
+- `~/.bashrc` - Main bash configuration file
+- `~/.profile` - Login shell configuration
+- `~/.bash_logout` - Commands executed when logging out
+
+### Additional Files (Backed Up If Present)
+- `~/.bash_aliases` - Custom command aliases
+- `~/.bash_functions` - User-defined bash functions
+- `~/.bash_history` - Command history
+- `~/.bashrc_help` - Custom help files
+- `~/.inputrc` - Readline configuration
+- `~/.config/starship.toml` - Starship prompt configuration
+
+---
+
+## 🔍 Troubleshooting
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/troubleshooting.png" alt="Troubleshooting" width="80%">
+  <p><i>Common troubleshooting scenarios</i></p>
+</div>
 
 ### Common Issues
 
-1. "Error: Please run as root"
+1. **"Error: Please run as root"**
    - Solution: Run the script with sudo
 
-2. "Error: User 'username' does not exist"
+2. **"Error: User 'username' does not exist"**
    - Solution: Check if the username is correct
    - Verify the user exists on the system
 
-3. "Warning: Could not backup/copy file"
+3. **"Warning: Could not backup/copy file"**
    - Solution: Check file permissions
    - Verify the source files exist in `/etc/skel/`
 
-## Contributing
+4. **"Error: Backup directory does not exist"**
+   - Solution: Verify the path provided to `--restore` is correct
+   - Use `--list-backups` to see available backups
 
-Feel free to submit issues and enhancement requests to luis@digitalxs.ca!
+### Debug Techniques
 
-## License
+1. Run with verbose mode to see detailed operation logs:
+   ```bash
+   sudo ./reset-bash-profile.sh username --verbose
+   ```
 
-This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 3 - see the LICENSE file for details.
+2. Use dry-run mode to test operations without making changes:
+   ```bash
+   sudo ./reset-bash-profile.sh username --dry-run
+   ```
 
-## Author
+---
 
-Luis Miguel P. Freitas - 2025
+## 📜 License
 
-## Acknowledgments
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
-- Based on Debian default bash configuration
-- Inspired by the need for a safe way to reset bash profiles after customizations that went wrong.
+<div align="center">
+  <img src="https://www.gnu.org/graphics/gplv3-with-text-136x68.png" alt="GPL v3 Logo">
+</div>
 
-## Version History
+### GPL v3.0 Summary:
 
-- 1.0.2 (2024-02-23)
-  - Some corrections and bugfixes
-  - Basic functionality for resetting bash profile
-  - Automatic backups with timestamps
-  - Changed curl to wget
-    
+- You can use, modify, and distribute this software.
+- If you distribute modified versions, you must make your source code available.
+- Changes must be documented.
+- The same license applies to derived works.
+
+---
+
+## 👨‍💻 Author
+
+- **Original Author:** Luis Miguel P. Freitas
+- **Website:** [DigitalXS.ca](https://digitalxs.ca)
+- **Email:** luis@digitalxs.ca
+
+---
+
+## 🙏 Support
+
+If you find this script useful, consider buying me a coffee! Your support helps maintain this project and develop new features.
+
+<div align="center">
+  <a href="https://www.buymeacoffee.com/digitalxs" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+  </a>
+</div>
+
+---
+
+<div align="center">
+  <p>
+    <a href="https://github.com/digitalxs/BashProfileReset/issues">Report Bug</a> •
+    <a href="https://github.com/digitalxs/BashProfileReset/issues">Request Feature</a> •
+    <a href="https://digitalxs.ca">Visit Website</a>
+  </p>
+  
+  <p>Made with ❤️ for the Debian community</p>
+  
+  <img src="https://www.debian.org/logos/openlogo-nd-50.png" alt="Debian Logo">
+</div>
