@@ -76,11 +76,6 @@ sudo ./reset-bash-profile.sh username
    ./reset-bash-profile.sh --version
    ```
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/installation.png" alt="Installation" width="80%">
-  <p><i>Installing the script on Debian 12</i></p>
-</div>
-
 ---
 
 ## 📚 Usage
@@ -92,13 +87,6 @@ Reset a user's bash profile to defaults on Debian 12:
 ```bash
 sudo ./reset-bash-profile.sh username
 ```
-
-### Advanced Usage Examples
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/advanced-usage.png" alt="Advanced Usage" width="80%">
-  <p><i>Examples of advanced script options in action</i></p>
-</div>
 
 #### See All Available Options
 
@@ -180,11 +168,6 @@ sudo ./reset-bash-profile.sh username --verbose --backup-dir /backups --force
 ---
 
 ## 🔍 Troubleshooting
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/troubleshooting.png" alt="Troubleshooting" width="80%">
-  <p><i>Common troubleshooting scenarios</i></p>
-</div>
 
 ### Common Issues
 
