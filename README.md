@@ -12,16 +12,6 @@
 <p>A robust utility script to safely reset bash profile configuration files to Debian 12 defaults<br>with automatic backups, restoration capabilities, and advanced user controls.</p>
 
 <p>
-  <a href="#installation">Installation</a> •
-  <a href="#usage">Usage</a> •
-  <a href="#features">Features</a> •
-  <a href="#screenshots">Screenshots</a> •
-  <a href="#documentation">Documentation</a> •
-  <a href="#license">License</a> •
-  <a href="#support">Support</a>
-</p>
-
-<p>
   <a href="https://www.buymeacoffee.com/digitalxs" target="_blank">
     <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
   </a>
