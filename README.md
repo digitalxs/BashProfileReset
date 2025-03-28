@@ -3,7 +3,7 @@
 # <img src="https://www.debian.org/logos/openlogo-nd.svg" alt="Debian Logo" width="50"> Bash Profile Reset Script
 
 <p>
-  <img src="https://img.shields.io/badge/Version-1.1.0-blue.svg" alt="Version 1.1.0">
+  <img src="https://img.shields.io/badge/Version-1.4.0-blue.svg" alt="Version 1.4.0">
   <img src="https://img.shields.io/badge/OS-Debian%2012-red.svg" alt="OS Debian 12">
   <img src="https://img.shields.io/badge/License-GPL%20v3-green.svg" alt="License GPL v3">
   <img src="https://img.shields.io/badge/Shell-Bash-yellow.svg" alt="Shell Bash">
