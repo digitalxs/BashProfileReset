@@ -38,10 +38,6 @@ sudo ./reset-bash-profile.sh username
 
 ## 🎯 Features
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/features-overview.png" alt="Features Overview" width="80%">
-</div>
-
   - Automatic timestamped backups of all bash configuration files
   - Customizable backup locations
   - Backup metadata tracking
