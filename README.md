@@ -179,11 +179,6 @@ sudo ./reset-bash-profile.sh username --verbose --backup-dir /backups --force
    - Shows the backup location
    - Gives instructions for applying changes
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/workflow.png" alt="Script Workflow" width="80%">
-  <p><i>Visual representation of the script's workflow</i></p>
-</div>
-
 ---
 
 ## 📁 Files Affected
