@@ -57,29 +57,20 @@ sudo ./reset-bash-profile.sh username
   <img src="https://raw.githubusercontent.com/digitalxs/BashProfileReset/assets/screenshots/features-overview.png" alt="Features Overview" width="80%">
 </div>
 
-- **📂 Comprehensive Backup System**
   - Automatic timestamped backups of all bash configuration files
   - Customizable backup locations
   - Backup metadata tracking
   - Preservation of file attributes and permissions
-
-- **🎛️ Advanced User Controls**
   - Dry-run mode to preview changes without applying them
   - Force mode to skip confirmation prompts
   - Verbose mode for detailed operation logging
   - Custom backup location specification
-
-- **🔄 Restoration Capabilities**
   - List all available backups for a user
   - Restore from any previous backup
   - Safe restoration process with confirmations
-
-- **🛡️ Security Enhancements**
   - Proper permission settings on all files
   - Secure backup directories (700 permissions)
   - Detailed operation logging
-
-- **💻 User Experience**
   - Color-coded output for better readability
   - Clear operation summaries
   - Helpful next-step guidance
