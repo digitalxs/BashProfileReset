@@ -6,7 +6,7 @@
 # YOU ARE ABSOLUTELY FREE TO USE THIS SCRIPT AS YOU WANT. IT'S YOUR RESPONSIBILITY ALONE!
 
 # Script version
-VERSION="1.4.0"
+VERSION="1.4.1"
 
 # Define colors for better readability
 RED='\033[0;31m'
