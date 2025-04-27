@@ -3,7 +3,6 @@
 # Usage: sudo ./reset-bash-profile.sh [username] [options]
 # Author: Luis Miguel P. Freitas - 2025
 # Contact me at: luis@digitalxs.ca or https://digitalxs.ca
-# Enhanced by: [Your name here]
 # YOU ARE ABSOLUTELY FREE TO USE THIS SCRIPT AS YOU WANT. IT'S YOUR RESPONSIBILITY ALONE!
 
 # Script version
